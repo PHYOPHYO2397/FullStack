@@ -49,7 +49,7 @@ img.onclick = () => {
 */
 const users = ["John", "Mary", "Andy"]; //0,1,2
 let result = "";
-
+//Yuki
 img.onclick = () => {
   for (let i = 0; i < users.length; i++) {
     //result += i + 1 + "." + users[i] + "<br>";
