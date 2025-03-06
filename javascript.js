@@ -47,11 +47,15 @@ img.onclick = () => {
   paragraph.textContent = "Hello " + result;
 };
 */
+
 const users = ["John", "Mary", "Andy"]; //0,1,2
 let result = "";
-//Yuki
+
 img.onclick = () => {
   for (let i = 0; i < users.length; i++) {
+    if (users[i] == "Mary") {
+      break;
+    }
     //result += i + 1 + "." + users[i] + "<br>";
     result += `${i + 1}.${users[i]}<br>`;
   }
