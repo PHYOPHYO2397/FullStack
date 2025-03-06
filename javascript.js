@@ -50,14 +50,22 @@ img.onclick = () => {
 
 const users = ["John", "Mary", "Andy"]; //0,1,2
 let result = "";
+//For Loop
+// img.onclick = () => {
+//   for (let i = 0; i < users.length; i++) {
+//     if (users[i] == "Mary") {
+//       break;
+//     }
+//     //result += i + 1 + "." + users[i] + "<br>";
+//     result += `${i + 1}.${users[i]}<br>`;
+//   }
+//   paragraph.innerHTML = result;
+// };
 
+//For In Loop
 img.onclick = () => {
-  for (let i = 0; i < users.length; i++) {
-    if (users[i] == "Mary") {
-      break;
-    }
-    //result += i + 1 + "." + users[i] + "<br>";
-    result += `${i + 1}.${users[i]}<br>`;
+  for (let i in users) {
+    result += `${Number(i) + 1}.${users[i]}<br>`;
   }
   paragraph.innerHTML = result;
 };
