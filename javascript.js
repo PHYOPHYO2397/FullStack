@@ -63,9 +63,21 @@ let result = "";
 // };
 
 //For In Loop
+//array and object
+// img.onclick = () => {
+//   for (let i in users) {
+//     result += `${Number(i) + 1}.${users[i]}<br>`;
+//   }
+//   paragraph.innerHTML = result;
+// };
+
+//For of
+//String
+// it does not need to know array length
+
 img.onclick = () => {
-  for (let i in users) {
-    result += `${Number(i) + 1}.${users[i]}<br>`;
+  for (let value of users) {
+    result += value + "<br>";
   }
   paragraph.innerHTML = result;
 };
