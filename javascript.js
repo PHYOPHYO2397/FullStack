@@ -16,7 +16,7 @@ img.onclick = () => {
 //While
 img.onclick = () => {
   let result = "";
-  let i = 0;
+  // let i = 0;
   //While
   // while (i < users.length) {
   //   result += `${i + 1}.` + users[i] + "<br>";
@@ -28,12 +28,15 @@ img.onclick = () => {
   //   i++;
   // } while (i < users.length);
 
-  const newUser = [];
+  // const newUser = [];
 
-  while (i < users.length) {
-    newUser[i] = `Mr.${users[i]}` + "<br>";
-    i++;
-  }
+  // while (i < users.length) {
+  //   newUser[i] = "Mr." + users[i] + "<br>";
 
-  para.innerHTML = newUser;
+  //   i++;
+  // }
+ //Map
+  const newUser = users.map((userItem) => "Mr" + userItem );
+
+  para.textContent = newUser;
 };
