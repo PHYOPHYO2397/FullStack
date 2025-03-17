@@ -48,5 +48,21 @@ img.onclick = () => {
   //   return "Good Morning" + name;
   // };
   const Morning = (name) => "Good Morning" + name;
-  para.textContent = Morning("Yuki");
+  //Normal
+  // function add(a, b) {
+  //   return a + b;
+  // }
+  //REST parameter
+  function add(...args) {
+    let total = 0;
+    // for (val of args) {
+    //   total = total + val;
+    // }
+    args.forEach((value) => {
+      total += value;
+    });
+
+    return total;
+  }
+  para.textContent = add(1, 10, 10, 1);
 };
