@@ -17,15 +17,23 @@ img.onclick = () => {
 img.onclick = () => {
   let result = "";
   let i = 0;
+  //While
   // while (i < users.length) {
   //   result += `${i + 1}.` + users[i] + "<br>";
   //   i++;
   // }
+  //DoWhile
+  // do {
+  //   result += `${i + 1}.` + users[i] + "<br>";
+  //   i++;
+  // } while (i < users.length);
 
-  do {
-    result += `${i + 1}.` + users[i] + "<br>";
+  const newUser = [];
+
+  while (i < users.length) {
+    newUser[i] = `Mr.${users[i]}` + "<br>";
     i++;
-  } while (i < users.length);
+  }
 
-  para.innerHTML = result;
+  para.innerHTML = newUser;
 };
