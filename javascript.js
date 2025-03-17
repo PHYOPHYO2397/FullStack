@@ -73,12 +73,37 @@ img.onclick = () => {
     getFullName: function () {
       return this.firstName + " " + this.lastName;
     },
+    fav: {
+      music: ["hipHop", "ballad"],
+      sports: ["tennis", "basketball"],
+    },
   };
 
-  function globalObject() {
-    return this;
-  }
+  // function globalObject() {
+  //   return this;
+  // }
 
-  para.innerHTML = userObject.getFullName();
-  globalObject();
+  //To copy object
+  //const newUserObject = Object.assign({}, userObject);
+  //DeepClone
+  const newUserObject = {
+    ...userObject,
+    fav: {
+      ...userObject.fav,
+      music: [...userObject.fav.music],
+      sports: [...userObject.fav.sports],
+    },
+  };
+  //Change first name of new object
+  newUserObject.firstName = "PHYO PHYO";
+  newUserObject.fav.music.push("R&B");
+  console.log(newUserObject);
+  console.log(userObject);
+
+  const cities = ["Yangon", "Mandalay", "Monywa"];
+
+  //const newCitites = cities.slice();
+  const newCities = [...cities];
+  newCities[0] = "PyinOoLwin";
+  para.innerHTML = newCities;
 };
