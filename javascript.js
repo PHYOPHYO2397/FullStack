@@ -12,7 +12,9 @@ img.onclick = () => {
   para.innerHTML = result;
 };
 */
-
+function greet(userName = "Kanty") {
+  return "Hello" + userName;
+}
 //While
 img.onclick = () => {
   let result = "";
@@ -35,8 +37,16 @@ img.onclick = () => {
 
   //   i++;
   // }
- //Map
-  const newUser = users.map((userItem) => "Mr" + userItem );
+  //Map
+  //const newUser = users.map((userItem) => "Mr" + userItem );
 
-  para.textContent = newUser;
+  // const Morning = function (name) {
+  //   return "Good Morning" + name;
+  // };
+
+  // const Morning = (name) => {
+  //   return "Good Morning" + name;
+  // };
+  const Morning = (name) => "Good Morning" + name;
+  para.textContent = Morning("Yuki");
 };
