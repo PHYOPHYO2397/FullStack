@@ -53,16 +53,32 @@ img.onclick = () => {
   //   return a + b;
   // }
   //REST parameter
-  function add(...args) {
-    let total = 0;
-    // for (val of args) {
-    //   total = total + val;
-    // }
-    args.forEach((value) => {
-      total += value;
-    });
+  // function add(...args) {
+  //   let total = 0;
+  //   // for (val of args) {
+  //   //   total = total + val;
+  //   // }
+  //   args.forEach((value) => {
+  //     total += value;
+  //   });
 
-    return total;
+  //   return total;
+  // }
+  //para.textContent = add(1, 10, 10, 1);
+
+  const userObject = {
+    firstName: "John",
+    lastName: "Kanty",
+    age: 27,
+    getFullName: function () {
+      return this.firstName + " " + this.lastName;
+    },
+  };
+
+  function globalObject() {
+    return this;
   }
-  para.textContent = add(1, 10, 10, 1);
+
+  para.innerHTML = userObject.getFullName();
+  globalObject();
 };
