@@ -135,19 +135,28 @@
       <section id="home">
 
         <h2>Home</h2>
-        <form action="">
-          <label for="userName">User Name </label><br>
-          <input type="text" id="userName"name="username" value="" placeholder="Your Name" required><br>
-          <label for="password">Password[0-9]</label><br>
-          <input type="password" id="password"name="password" value="" maxlength="3" pattern="[0-9A-Za-z]{3}" required><br>
-          <label for="phoneNo">Phone No.</label><br>
-          <input type="text" id="phoneNo"name="phoneNo" value="" placeholder="0978520****" minlength="5" required><br>
-          <label for="disabled">Role</label><br>
-          <input type="text" id="disabled" name="disabled" value="Admin" disabled>
-          <input type="hidden" value="csrf_token"><br>
+        <form action="" method="post">
+          <fieldset>
+            <legend>
+              Personal information
+            </legend>
+            <label for="userName">User Name </label><br>
+            <input type="text" id="userName"name="username" value="" placeholder="Your Name" required><br>
+            <label for="password">Password[0-9]</label><br>
+            <input type="password" id="password"name="password" value="" maxlength="3" pattern="[0-9A-Za-z]{3}" required><br>
+            <label for="phoneNo">Phone No.</label><br>
+            <input type="text" id="phoneNo"name="phoneNo" value="" placeholder="0978520****" minlength="5" required><br>
+            <label for="disabled">Role</label><br>
+            <input type="text" id="disabled" name="disabled" value="Admin" disabled>
+            <input type="hidden" value="csrf_token"><br><br>
+          </fieldset><br>
+        
 
-
-
+          <fieldset >
+            <legend>
+              Radio Button
+            </legend>
+            
           <input type="radio" id="html" name="radioBtn" value="HTML">
           <label for="html">HTML</label><br>
           <input type="radio" id="css" name="radioBtn" value="CSS">
@@ -155,12 +164,29 @@
           <input type="radio" id="js" name="radioBtn" value="JavaScript">
           <label for="js">JS</label><br>
 
-          <input type="checkbox" id="html" name="CBtn1" value="HTML">
+          </fieldset><br>
+
+           <fieldset>
+            <legend>checkbox</legend>
+            <input type="checkbox" id="html" name="CBtn1" value="HTML">
           <label for="html">HTML</label><br>
           <input type="checkbox" id="css" name="CBtn2" value="CSS">
           <label for="css">CSS</label><br>
           <input type="checkbox" id="js" name="CBtn3" value="JavaScript">
           <label for="js">JS</label><br>
+           </fieldset><br>
+
+
+           <label for="pet">Pet</label><br>
+           <input name="pet" id="pet" list="petlist"><br>
+           <datalist id="petlist">
+            <option value="Cat"></option>
+            <option value="Panda"></option>
+            <option value="Puppy"></option>
+
+
+           </datalist>
+          
 
           <!-- number -->
            <label for="number">No</label><br>
@@ -175,7 +201,20 @@
            <input type="reset"><br>
            <!-- Color -->
            <label for="color">Color</label><br>
-           <input type="color" id="color" name="color" value="#f4f4f4">
+           <input type="color" id="color" name="color" value="#f4f4f4"><br>
+           <label for="description"></label>
+
+           <textarea name="description" id="description" rows="10"></textarea><br>
+           <label for="color2">Dropdown color</label><br>
+
+           <select name="color2" id="color2" multiple>
+
+            <option value="1">Blue</option>
+            <option value="2" selected>White</option>
+            <option value="3">Pink</option>
+
+
+           </select><br>
 
 
 
