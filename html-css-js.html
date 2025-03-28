@@ -22,6 +22,16 @@
         position: relative;
       }
 
+      .newClass{
+        font-family: 'Courier New', Courier, monospace;
+        font-style: italic;
+      }
+
+      h2,p{
+        text-align: left;
+      }
+
+
       header img {
         position: absolute;
         top: 10px;
@@ -92,15 +102,24 @@
       /* element selector */
       h2 {
         color: #4caf50;
+        font-size: 80px;
       }
       /* grouping selector */
       h2,
       p {
-        text-align: center;
+        text-align: left;
+      }
+
+      *{
+        text-align: center
+        ;
       }
       /* id selector */
-      #about-title {
-        font-size: 35px;
+     
+      #about-title{
+        font-size: 20px;
+        color:#45a049
+
       }
       /* class selector */
       .abcontent {
@@ -206,7 +225,7 @@
     <!-- Main Content Section -->
     <main>
       <section id="home">
-        <h2>Home</h2>
+        <h2 >Home</h2>
         <p>
           Welcome to the homepage of this simple website. Here, you'll find
           basic information about the site. This website is built using HTML,
@@ -218,7 +237,7 @@
 
       <section id="about">
         <h2 id="about-title" class="abcontent">About</h2>
-        <p class="abcontent absize">
+        <p class="abcontent absize newClass">
           This website is built using HTML, CSS, and JavaScript. It serves as an
           example of a basic webpage structure with interactivity.
         </p>
