@@ -157,6 +157,9 @@
       p {
         line-height: 1.6em;
       }
+      p:hover{
+        color:#4caf50
+      }
 
       #head3id {
         color: green;
@@ -169,6 +172,21 @@
       h3 {
         color: red;
       }
+
+      h2:hover{
+        color:aqua
+      }
+
+      p::selection{
+        background-color: aqua;
+        color:#4caf50;
+      }
+
+      h2.psuh2:hover{
+        color:chocolate
+      }
+
+      
 
       #contact {
         margin-bottom: 150px;
@@ -196,6 +214,10 @@
         border-radius: 5px;
         cursor: pointer;
         display: none;
+      }
+
+      #home{
+        font-size: x-small;
       }
 
       #backToTop:hover {
@@ -265,7 +287,7 @@
       </section>
 
       <section id="contact">
-        <h2>Contact</h2>
+        <h2 class="psuh2">Contact</h2>
         <p>
           Feel free to reach out via email or social media if you have any
           questions or comments.
