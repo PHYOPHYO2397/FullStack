@@ -6,6 +6,7 @@
     <title>Simple HTML Website</title>
     <style>
       /* Global Styles */
+      /* TEST */
       body {
         font-family: Arial, sans-serif;
         margin: 0;
@@ -22,15 +23,15 @@
         position: relative;
       }
 
-      .newClass{
-        font-family: 'Courier New', Courier, monospace;
+      .newClass {
+        font-family: "Courier New", Courier, monospace;
         font-style: italic;
       }
 
-      h2,p{
+      h2,
+      p {
         text-align: left;
       }
-
 
       header img {
         position: absolute;
@@ -110,16 +111,14 @@
         text-align: left;
       }
 
-      *{
-        text-align: center
-        ;
+      * {
+        text-align: center;
       }
       /* id selector */
-     
-      #about-title{
-        font-size: 20px;
-        color:#45a049
 
+      #about-title {
+        font-size: 20px;
+        color: #45a049;
       }
       /* class selector */
       .abcontent {
@@ -130,7 +129,7 @@
       }
       /* descendant selector */
       div p {
-        color: rgba(24, 24, 196, 0.8);
+        color: aqua;
       }
       /* child selector */
       article > p {
@@ -138,7 +137,7 @@
       }
       /* adjacent sibling selector */
       h2 + p {
-        background-color: yellow;
+        background-color: #45a049;
       }
       /* general sibling selector */
       div ~ p {
@@ -225,7 +224,7 @@
     <!-- Main Content Section -->
     <main>
       <section id="home">
-        <h2 >Home</h2>
+        <h2>Home</h2>
         <p>
           Welcome to the homepage of this simple website. Here, you'll find
           basic information about the site. This website is built using HTML,
