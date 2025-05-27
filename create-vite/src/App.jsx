@@ -1,37 +1,74 @@
-import { useState, Fragment } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import Greeting from "./components/Greeting";
+import React from "react";
+import { useState } from "react";
 
-function App() {
+const App = () => {
   const [count, setCount] = useState(0);
+  const [fruits, setFruits] = useState(["Orange", "Apple"]);
+
+  const [drinks, setDrinks] = useState(["coffee", "milk", "milo"]);
+  const [idol, setIdol] = useState({
+    name: "Baekhyun",
+    group: "EXO",
+    birthdate: "1994/5/6",
+    isBusy: true,
+  });
 
   return (
     <>
-      <div>
-        <Greeting />
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <p>Count:{count}</p>
+      <button
+        onClick={() => {
+          setCount(count + 1);
+          setCount((prev) => prev + 1);
+        }}
+      >
+        Increase
+      </button>
+
+      <button
+        onClick={() => {
+          setCount(count - 1);
+        }}
+      >
+        Decrease
+      </button>
+
+      <ul>
+        {fruits.map((fruit) => (
+          <li key={fruit}>{fruit}</li>
+        ))}
+      </ul>
+
+      <ol>
+        {drinks.map((drink) => (
+          <li key={drink}>{drink}</li>
+        ))}
+      </ol>
+      <p>Name : {idol.name}</p>
+      <p>Group Name : {idol.group}</p>
+      <p>Birthdate :{idol.birthdate}</p>
+      <p>Staus :{idol.isBusy ? <p>"BUsy"</p> : <p>"NotBUsy"</p>}</p>
+
+      <button onClick={() => setFruits([...fruits, "PineApple"])}>Add</button>
+
+      <button onClick={() => setDrinks([...drinks, "Coffee Latte"])}>
+        Add Drinks
+      </button>
+
+      <button
+        onClick={() =>
+          setIdol((prev) => {
+            return {
+              ...prev,
+              isBusy: !idol.isBusy,
+            };
+          })
+        }
+      >
+        Add Idol Info
+      </button>
     </>
   );
-}
+};
 
 export default App;
