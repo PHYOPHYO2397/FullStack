@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
 const App = () => {
@@ -12,6 +12,18 @@ const App = () => {
     birthdate: "1994/5/6",
     isBusy: true,
   });
+
+  const [name, setName] = useState("");
+  const [error, setError] = useState("");
+  useEffect(() => {
+    if (!name) {
+      setError("Please Enter name ");
+    } else if (name.trim() === "") {
+      setError("All characters are space , please enter again");
+    } else {
+      setError("");
+    }
+  }, [name]);
 
   return (
     <>
@@ -47,7 +59,7 @@ const App = () => {
       <p>Name : {idol.name}</p>
       <p>Group Name : {idol.group}</p>
       <p>Birthdate :{idol.birthdate}</p>
-      <p>Staus :{idol.isBusy ? <p>"BUsy"</p> : <p>"NotBUsy"</p>}</p>
+      {/* <p>Status :{idol.isBusy ? <p>"BUsy"</p> : <p>"NotBUsy"</p>}</p> */}
 
       <button onClick={() => setFruits([...fruits, "PineApple"])}>Add</button>
 
@@ -67,6 +79,18 @@ const App = () => {
       >
         Add Idol Info
       </button>
+
+      <form>
+        <label htmlFor="name">Enter your name</label>
+
+        <input
+          type="text"
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <p>{error}</p>
+      </form>
     </>
   );
 };
