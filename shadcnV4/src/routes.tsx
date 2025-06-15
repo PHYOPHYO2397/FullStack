@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Product from "./pages/Product";
 import Details from "./pages/Details";
 import Dashboard from "./pages/Dashboard";
+import ProductLayouts from "./components/ui/ProductLayouts";
 
 export const RouteList = () => {
   return (
@@ -12,10 +13,15 @@ export const RouteList = () => {
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="products" element={<Dashboard />}>
-            <Route index element={<Product />} />
-            <Route path="detail" element={<Details />} />
+          <Route path="about/*" element={<About />} />
+          {/* Normal Layout */}
+          <Route element={<ProductLayouts />}>
+            {/* Nested  */}
+            <Route path="products" element={<Dashboard />}>
+              <Route index element={<Product />} />
+              {/* Dynamic Segment */}
+              <Route path=":pid/edit/:uid?" element={<Details />} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

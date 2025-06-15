@@ -1,3 +1,6 @@
+import { useParams } from "react-router";
+
 export default function About() {
-  return <div>About</div>;
+  const { "*": splat } = useParams();
+  return <div>About {splat}</div>;
 }
