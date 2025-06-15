@@ -10,15 +10,17 @@ function App() {
   return (
     <>
       <Router>
-        <Header />
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
 
-        <Footer />
+          <Footer />
+        </div>
       </Router>
     </>
   );
