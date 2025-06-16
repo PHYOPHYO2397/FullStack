@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 function Header() {
   return (
@@ -10,7 +10,40 @@ function Header() {
         <Link to="/" className="text-xl font-bold">
           Fashion Shop
         </Link>
-        <button className="block text-xl lg:hidden"> &#8801;</button>
+        <button className="block text-xl text-white lg:hidden">&#8801;</button>
+        {/*Nav for Desktop view  */}
+        <ul className="hidden space-x-6 lg:flex">
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "text-yellow-400" : "hover:text-gray-300"
+              }
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/shop"
+              className={({ isActive }) =>
+                isActive ? "text-yellow-400" : "hover:text-gray-300"
+              }
+            >
+              Shop
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/cart"
+              className={({ isActive }) =>
+                isActive ? "text-yellow-400" : "hover:text-gray-300"
+              }
+            >
+              Cart
+            </NavLink>
+          </li>
+        </ul>
       </nav>
     </header>
   );
