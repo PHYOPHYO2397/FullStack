@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router";
 
 function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const toggleFunction = () => {
     setIsOpen(!isOpen);
   };
@@ -57,7 +57,7 @@ function Header() {
         </ul>
         {/*Mobile View Navigation*/}
         <div
-          className={`fixed inset-0 z-50 transform ${isOpen ? "translate-x-0" : "translate-x-full"} bg-sky-400 opacity-90 transition-transform duration-300 ease-in-out lg:hidden`}
+          className={`fixed inset-0 z-50 transform ${isOpen ? "-translate-y-full" : "translate-y-0"} bg-sky-400 opacity-90 transition-transform duration-300 ease-in-out lg:hidden`}
         >
           <div className="flex h-full flex-col items-center justify-center gap-8">
             <Link to="/" className="text-3xl" onClick={toggleFunction}>
