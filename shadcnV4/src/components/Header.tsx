@@ -56,11 +56,19 @@ function Header() {
           </li>
         </ul>
         {/*Mobile View Navigation*/}
-        <div className="">
+        <div
+          className={`fixed inset-0 z-50 transform ${isOpen ? "translate-x-0" : "translate-x-full"} bg-sky-400 opacity-90 transition-transform duration-300 ease-in-out lg:hidden`}
+        >
           <div className="">
-            <Link to="/">Home</Link>
-            <Link to="/shop">Shop</Link>
-            <Link to="/cart">Cart</Link>
+            <Link to="/" className="text-3xl">
+              Home
+            </Link>
+            <Link to="/shop" className="text-3xl">
+              Shop
+            </Link>
+            <Link to="/cart" className="text-3xl">
+              Cart
+            </Link>
           </div>
         </div>
       </nav>
