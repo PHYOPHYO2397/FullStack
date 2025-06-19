@@ -1,6 +1,7 @@
+import { Button } from "@/components/ui/button";
 //can use type keyword instead of interface
 interface productType {
-  id: number;
+  //   id: number;
   name: string;
   price: number;
   img: string;
@@ -8,13 +9,25 @@ interface productType {
 
 //FC means functional component
 //const ProductCard: React.FC<productType> = ({ id, name, price, img }) => {
-const ProductCard = ({ id, name, price, img }: productType) => {
+const ProductCard = ({ name, price, img }: productType) => {
   return (
     <>
-      <div>{id}</div>
-      <div>{name}</div>
-      <div>{price}</div>
-      <img src={img} alt="name" />
+      <div className="rounded-lg bg-white p-4 shadow-lg">
+        <div className="h-48 w-full">
+          <img
+            src={img}
+            alt="name"
+            className="h-full w-full rounded-md object-contain"
+          />
+        </div>
+        <div className="flex justify-between">
+          <div>
+            <h3 className="">{name}</h3>
+            <p className="">${price}</p>
+          </div>
+          <Button>Add to Cart</Button>
+        </div>
+      </div>
     </>
   );
 };
