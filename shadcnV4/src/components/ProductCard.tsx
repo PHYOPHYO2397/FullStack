@@ -1,14 +1,14 @@
-const ProductCard = ({
-  id,
-  name,
-  price,
-  img,
-}: {
+//can use type keyword instead of interface
+interface productType {
   id: number;
   name: string;
   price: number;
   img: string;
-}) => {
+}
+
+//FC means functional component
+//const ProductCard: React.FC<productType> = ({ id, name, price, img }) => {
+const ProductCard = ({ id, name, price, img }: productType) => {
   return (
     <>
       <div>{id}</div>
