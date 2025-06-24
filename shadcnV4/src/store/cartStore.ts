@@ -1,0 +1,3 @@
+interface cartItems {
+  id: number;
+}
