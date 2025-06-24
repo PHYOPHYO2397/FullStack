@@ -2,15 +2,16 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 //can use type keyword instead of interface
 interface productType {
-  //   id: number;
+  id: number;
   name: string;
   price: number;
   img: string;
+  quantity: number;
 }
 
 //FC means functional component
 //const ProductCard: React.FC<productType> = ({ id, name, price, img }) => {
-const ProductCard = ({ name, price, img }: productType) => {
+const ProductCard = ({ name, price, img, quantity }: productType) => {
   const [imgLoad, setImgLoad] = useState(false);
   const handleImageLoad = () => {
     setImgLoad(true);
@@ -33,6 +34,7 @@ const ProductCard = ({ name, price, img }: productType) => {
             <h3 className="text-lg font-bold">{name}</h3>
             <p className="text-gray-400">${price}</p>
           </div>
+          <input type="number" value={quantity} className="bg-sky-200" />
           <Button>Add to Cart</Button>
           {/* <button className="rounded-md bg-orange-400 px-4 py-2 text-white hover:bg-sky-300">
             Add to Cart

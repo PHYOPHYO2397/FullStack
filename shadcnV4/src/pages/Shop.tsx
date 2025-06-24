@@ -10,18 +10,21 @@ function Shop() {
       name: "T-shirt",
       price: 20,
       img: t1,
+      quantity: 1,
     },
     {
       id: 2,
       name: "Sweater",
       price: 100,
       img: t2,
+      quantity: 2,
     },
     {
       id: 3,
       name: "Long Shirt",
       price: 12,
       img: t3,
+      quantity: 3,
     },
   ];
   return (
