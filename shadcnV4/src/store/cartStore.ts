@@ -44,11 +44,17 @@ export const useCartStore = create<CartState & CartActions>()(
       },
       addItem = (item) =>
         set((state) => {
-          state.carts.push(item);
+          const existingItem = state.carts.find((i) => {
+            i.id == item.id;
+          });
+          if (existingItem) {
+          } else state.carts.push(item);
         }),
       updateItem = () => {},
       removeItem = () => {},
-      clearCart = () => {},
+      clearCart = () => {
+        set(initialState);
+      },
     })),
     {
       name: "cart-storage",
