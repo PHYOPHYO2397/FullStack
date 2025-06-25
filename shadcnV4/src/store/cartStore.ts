@@ -31,28 +31,40 @@ export const useCartStore = create<CartState & CartActions>()(
   persist(
     immer((set, get) => ({
       ...initialState,
-      getTotalItems = () => {
+      getTotalItems: () => {
         const { carts } = get();
         return carts.reduce((total, product) => total + product.quantity, 0);
       },
-      getTotalPrice = () => {
+      getTotalPrice: () => {
         const { carts } = get();
         return carts.reduce(
           (total, product) => total + product.price * product.quantity,
           0,
         );
       },
-      addItem = (item) =>
+      addItem: (item) =>
         set((state) => {
           const existingItem = state.carts.find((i) => {
             i.id == item.id;
           });
           if (existingItem) {
-          } else state.carts.push(item);
+            existingItem.quantity = item.quantity || 1;
+          } else state.carts.push({ ...item, quantity: item.quantity || 1 });
         }),
-      updateItem = () => {},
-      removeItem = () => {},
-      clearCart = () => {
+      updateItem: (id, quantity) =>
+        set((state) => {
+          const existingItem = state.carts.find((i) => {
+            i.id == id;
+          });
+          if (existingItem) {
+            existingItem.quantity = quantity;
+          }
+        }),
+      removeItem: (id) =>
+        set((state) => {
+          state.carts = state.carts.filter((item) => item.id !== id);
+        }),
+      clearCart: () => {
         set(initialState);
       },
     })),
